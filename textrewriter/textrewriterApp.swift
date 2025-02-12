@@ -13,5 +13,16 @@ struct textrewriterApp: App {
         WindowGroup {
             ContentView()
         }
+        Settings {
+            SettingsView()
+        }
+        MenuBarExtra("Text Rewriter", systemImage: "pencil") {
+            SettingsLink()
+            Divider()
+            Button("Quit") {
+                NSApplication.shared.terminate(nil)
+            }
+        }
     }
+
 }

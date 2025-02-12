@@ -3,8 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
+
+/* Begin PBXBuildFile section */
+		720EC1F82D5A82C0000C1C41 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 720EC1F72D5A82C0000C1C41 /* KeychainSwift */; };
+		720EC20C2D5AA868000C1C41 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 720EC20B2D5AA868000C1C41 /* LaunchAtLogin */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7231B69D2D5A6D170088B371 /* textrewriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = textrewriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +24,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				720EC20C2D5AA868000C1C41 /* LaunchAtLogin in Frameworks */,
+				720EC1F82D5A82C0000C1C41 /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +68,8 @@
 			);
 			name = textrewriter;
 			packageProductDependencies = (
+				720EC1F72D5A82C0000C1C41 /* KeychainSwift */,
+				720EC20B2D5AA868000C1C41 /* LaunchAtLogin */,
 			);
 			productName = textrewriter;
 			productReference = 7231B69D2D5A6D170088B371 /* textrewriter.app */;
@@ -90,6 +99,10 @@
 				Base,
 			);
 			mainGroup = 7231B6942D5A6D170088B371;
+			packageReferences = (
+				720EC1F62D5A82C0000C1C41 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				720EC20A2D5AA868000C1C41 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */,
+			);
 			productRefGroup = 7231B69E2D5A6D170088B371 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -252,6 +265,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = NO;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -279,6 +293,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = NO;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -314,6 +329,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		720EC1F62D5A82C0000C1C41 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 24.0.0;
+			};
+		};
+		720EC20A2D5AA868000C1C41 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Legacy";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		720EC1F72D5A82C0000C1C41 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 720EC1F62D5A82C0000C1C41 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+		720EC20B2D5AA868000C1C41 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 720EC20A2D5AA868000C1C41 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Legacy" */;
+			productName = LaunchAtLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7231B6952D5A6D170088B371 /* Project object */;
 }

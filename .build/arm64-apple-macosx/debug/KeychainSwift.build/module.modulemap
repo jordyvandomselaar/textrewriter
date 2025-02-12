@@ -1,0 +1,4 @@
+module KeychainSwift {
+    header "/Users/jordyvandomselaar/workspace/personal/textrewriter/.build/arm64-apple-macosx/debug/KeychainSwift.build/KeychainSwift-Swift.h"
+    requires objc
+}
