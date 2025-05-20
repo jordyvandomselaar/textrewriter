@@ -119,6 +119,7 @@ struct ContentView: View {
             ],
             "temperature": 0.7,
             "top_p": 0.8,
+            "max_completion_tokens": 32768
         ]
         
         do {
