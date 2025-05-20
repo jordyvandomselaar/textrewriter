@@ -99,7 +99,7 @@ struct ContentView: View {
     // Asynchronous function to send a prompt to OpenAI,
     // asking it to reformat the provided text into a legit Slack message.
     func reformatTextWithOpenAI(originalText: String, selectAll: Bool) async {
-        guard let url = URL(string: "https://api.openai.com/v1/chat/completions") else { return }
+        guard let url = URL(string: "https://api.groq.com/openai/v1/chat/completions") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -112,7 +112,7 @@ struct ContentView: View {
         
         // Prepare the request body with the system prompt from AppStorage
         let requestBody: [String: Any] = [
-            "model": "gpt-4o",
+            "model": "llama-3.3-70b-versatile",
             "messages": [
                 ["role": "system", "content": finalSystemPrompt],
                 ["role": "user", "content": promptText]
