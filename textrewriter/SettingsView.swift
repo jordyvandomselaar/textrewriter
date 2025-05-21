@@ -6,6 +6,7 @@ struct SettingsView: View {
     @State private var openAIKey: String = ""
     @State private var statusMessage: String = ""
     @AppStorage("systemPrompt") private var systemPrompt: String = ""
+    @AppStorage("modelName") private var modelName: String = "llama-3.3-70b-versatile"
     
     // Keyboard shortcuts
     @AppStorage("keyboardShortcutAll") private var shortcutAllData: Data = try! JSONEncoder().encode(AppKeyboardShortcut.defaultAll)
@@ -35,6 +36,14 @@ struct SettingsView: View {
                 if !statusMessage.isEmpty {
                     Text(statusMessage)
                         .foregroundColor(.green)
+                }
+                
+                Section(header: Text("Model")) {
+                    TextField("Model Name", text: $modelName)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    Text("Enter the model name to use for text rewriting (e.g. llama-3.3-70b-versatile, gpt-4, gpt-3.5-turbo)")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
                 }
                 
                 Section(header: Text("Keyboard Shortcuts")) {

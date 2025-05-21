@@ -9,6 +9,7 @@ struct ContentView: View {
     @State private var eventMonitor: Any? = nil
     private let keychain = KeychainSwift()
     @AppStorage("systemPrompt") private var systemPrompt: String = ""
+    @AppStorage("modelName") private var modelName: String = "llama-3.3-70b-versatile"
     
     // Keyboard shortcuts
     @AppStorage("keyboardShortcutAll") private var shortcutAllData: Data = try! JSONEncoder().encode(AppKeyboardShortcut.defaultAll)
@@ -110,9 +111,9 @@ struct ContentView: View {
         
         let finalSystemPrompt = systemPrompt.isEmpty ? defaultSystemPrompt : systemPrompt
         
-        // Prepare the request body with the system prompt from AppStorage
+        // Use the modelName from settings
         let requestBody: [String: Any] = [
-            "model": "llama-3.3-70b-versatile",
+            "model": modelName,
             "messages": [
                 ["role": "system", "content": finalSystemPrompt],
                 ["role": "user", "content": promptText]
